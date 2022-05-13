@@ -9,21 +9,31 @@
 /* Begin PBXBuildFile section */
 		D5970974282E1DCA00642949 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5970973282E1DCA00642949 /* AppDelegate.swift */; };
 		D5970976282E1DCA00642949 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5970975282E1DCA00642949 /* SceneDelegate.swift */; };
-		D5970978282E1DCA00642949 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5970977282E1DCA00642949 /* ViewController.swift */; };
 		D597097B282E1DCA00642949 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5970979282E1DCA00642949 /* Main.storyboard */; };
 		D597097D282E1DCB00642949 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D597097C282E1DCB00642949 /* Assets.xcassets */; };
 		D5970980282E1DCB00642949 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D597097E282E1DCB00642949 /* LaunchScreen.storyboard */; };
+		D597098A282E2E4B00642949 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5970989282E2E4B00642949 /* AuthViewController.swift */; };
+		D597098C282E378600642949 /* MovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D597098B282E378600642949 /* MovieViewController.swift */; };
+		D597098E282E37DA00642949 /* OrderDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D597098D282E37DA00642949 /* OrderDetailsViewController.swift */; };
+		D5970990282E381200642949 /* SeatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D597098F282E381200642949 /* SeatsViewController.swift */; };
+		D5970992282E388F00642949 /* OrderConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5970991282E388F00642949 /* OrderConfirmationViewController.swift */; };
+		D5970994282E3A4A00642949 /* TicketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5970993282E3A4A00642949 /* TicketViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D5970970282E1DCA00642949 /* happy-hour-cinema-ticket-booking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "happy-hour-cinema-ticket-booking.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5970973282E1DCA00642949 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D5970975282E1DCA00642949 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D5970977282E1DCA00642949 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D597097A282E1DCA00642949 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D597097C282E1DCB00642949 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D597097F282E1DCB00642949 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D5970981282E1DCB00642949 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D5970989282E2E4B00642949 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		D597098B282E378600642949 /* MovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewController.swift; sourceTree = "<group>"; };
+		D597098D282E37DA00642949 /* OrderDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailsViewController.swift; sourceTree = "<group>"; };
+		D597098F282E381200642949 /* SeatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatsViewController.swift; sourceTree = "<group>"; };
+		D5970991282E388F00642949 /* OrderConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderConfirmationViewController.swift; sourceTree = "<group>"; };
+		D5970993282E3A4A00642949 /* TicketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,13 +68,34 @@
 			children = (
 				D5970973282E1DCA00642949 /* AppDelegate.swift */,
 				D5970975282E1DCA00642949 /* SceneDelegate.swift */,
-				D5970977282E1DCA00642949 /* ViewController.swift */,
-				D5970979282E1DCA00642949 /* Main.storyboard */,
+				D5970988282E26B000642949 /* Controller */,
+				D5970987282E269100642949 /* View */,
 				D597097C282E1DCB00642949 /* Assets.xcassets */,
-				D597097E282E1DCB00642949 /* LaunchScreen.storyboard */,
 				D5970981282E1DCB00642949 /* Info.plist */,
 			);
 			path = "happy-hour-cinema-ticket-booking";
+			sourceTree = "<group>";
+		};
+		D5970987282E269100642949 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D5970979282E1DCA00642949 /* Main.storyboard */,
+				D597097E282E1DCB00642949 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D5970988282E26B000642949 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D5970989282E2E4B00642949 /* AuthViewController.swift */,
+				D597098B282E378600642949 /* MovieViewController.swift */,
+				D597098D282E37DA00642949 /* OrderDetailsViewController.swift */,
+				D597098F282E381200642949 /* SeatsViewController.swift */,
+				D5970991282E388F00642949 /* OrderConfirmationViewController.swift */,
+				D5970993282E3A4A00642949 /* TicketViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,7 +169,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D5970978282E1DCA00642949 /* ViewController.swift in Sources */,
+				D5970994282E3A4A00642949 /* TicketViewController.swift in Sources */,
+				D597098A282E2E4B00642949 /* AuthViewController.swift in Sources */,
+				D597098C282E378600642949 /* MovieViewController.swift in Sources */,
+				D597098E282E37DA00642949 /* OrderDetailsViewController.swift in Sources */,
+				D5970992282E388F00642949 /* OrderConfirmationViewController.swift in Sources */,
+				D5970990282E381200642949 /* SeatsViewController.swift in Sources */,
 				D5970974282E1DCA00642949 /* AppDelegate.swift in Sources */,
 				D5970976282E1DCA00642949 /* SceneDelegate.swift in Sources */,
 			);
