@@ -46,14 +46,14 @@ class SignupViewController: UIViewController {
     }
     
     func showLoading() {
-        self.errorLabel.text = "Loading..."
-        self.errorLabel.textColor = .green
+        self.errorLabel.text = "Creating account..."
+        self.errorLabel.textColor = UIColor.init(red: 42/255, green: 157/255, blue: 143/255, alpha: 1)
         self.errorLabel.alpha = 1
     }
     
     func showSuccessMsg() {
         self.errorLabel.text = "User creation success!"
-        self.errorLabel.textColor = .green
+        self.errorLabel.textColor = UIColor.init(red: 42/255, green: 157/255, blue: 143/255, alpha: 1)
         self.errorLabel.alpha = 1
     }
     

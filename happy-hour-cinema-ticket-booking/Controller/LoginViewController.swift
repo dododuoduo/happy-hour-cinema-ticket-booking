@@ -40,13 +40,13 @@ class LoginViewController: UIViewController {
     
     func showLoading() {
         self.errorLabel.text = "Loading..."
-        self.errorLabel.textColor = .green
+        self.errorLabel.textColor = UIColor.init(red: 42/255, green: 157/255, blue: 143/255, alpha: 1)
         self.errorLabel.alpha = 1
     }
     
     func showSuccessMsg() {
         self.errorLabel.text = "Login success!"
-        self.errorLabel.textColor = .green
+        self.errorLabel.textColor = UIColor.init(red: 42/255, green: 157/255, blue: 143/255, alpha: 1)
         self.errorLabel.alpha = 1
     }
     

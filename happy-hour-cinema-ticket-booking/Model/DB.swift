@@ -31,6 +31,22 @@ class DB {
             }
         }
     }
+    
+    func renderFirstname(uid: String, label: UILabel) {
+        let userDocRef = userCollection.document(uid)
+        userDocRef.getDocument { (document, error) in
+            guard let data = document?.data(), error == nil else {
+                return
+            }
+            
+            guard let lastname = data["firstname"] as? String else {
+                return
+            }
+            
+            label.text = lastname
+            label.alpha = 1
+        }
+    }
 }
 
 

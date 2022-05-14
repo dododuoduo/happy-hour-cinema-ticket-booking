@@ -11,7 +11,7 @@
         <!--Home-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="happy_hour_cinema_ticket_booking" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" id="BYZ-38-t0r" customClass="HomeViewController" customModule="happy_hour_cinema_ticket_booking" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -113,10 +113,10 @@
                                     </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="YsG-ys-jEZ" firstAttribute="height" secondItem="Q2X-62-u0m" secondAttribute="height" id="14B-CJ-Nzg"/>
-                                    <constraint firstItem="dUf-e8-Utu" firstAttribute="height" secondItem="Q2X-62-u0m" secondAttribute="height" id="9zE-UB-b7m"/>
-                                    <constraint firstItem="jEe-9D-hd2" firstAttribute="height" secondItem="Q2X-62-u0m" secondAttribute="height" id="FzE-FW-5PF"/>
-                                    <constraint firstItem="dsx-Ad-jdc" firstAttribute="height" secondItem="Q2X-62-u0m" secondAttribute="height" id="m1V-f7-5ln"/>
+                                    <constraint firstItem="dUf-e8-Utu" firstAttribute="height" secondItem="Q2X-62-u0m" secondAttribute="height" id="8jo-xZ-LEL"/>
+                                    <constraint firstItem="YsG-ys-jEZ" firstAttribute="height" secondItem="Q2X-62-u0m" secondAttribute="height" id="S4s-Ve-o85"/>
+                                    <constraint firstItem="dsx-Ad-jdc" firstAttribute="height" secondItem="Q2X-62-u0m" secondAttribute="height" id="pCN-Ar-UbB"/>
+                                    <constraint firstItem="jEe-9D-hd2" firstAttribute="height" secondItem="Q2X-62-u0m" secondAttribute="height" id="tLe-Wc-4Um"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -163,7 +163,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="6tP-po-wC4">
                                 <rect key="frame" x="20" y="88" width="374" height="40"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uyr-Wy-z9y">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uyr-Wy-z9y">
                                         <rect key="frame" x="0.0" y="0.0" width="111.5" height="40"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -184,6 +184,9 @@
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Logout"/>
+                                        <connections>
+                                            <action selector="onLogoutTapped:" destination="Sl0-7z-9qC" eventType="touchUpInside" id="KDz-A5-dSA"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -374,7 +377,7 @@
         <!--Navigation Controller-->
         <scene sceneID="H3K-w3-nKy">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="96U-fn-mMx" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="navVC" automaticallyAdjustsScrollViewInsets="NO" id="96U-fn-mMx" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="atu-Pb-MSq">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -391,7 +394,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="S3E-Dx-V5H"/>
+        <segue reference="TPs-IK-jgv"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">

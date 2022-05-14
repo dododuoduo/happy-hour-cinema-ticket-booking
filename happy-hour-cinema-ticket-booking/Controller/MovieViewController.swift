@@ -14,6 +14,7 @@ class MovieViewController: UIViewController {
     @IBOutlet weak var myTicketButton: UIButton!
     @IBOutlet weak var logoutButton: UIButton!
     
+    var db = DB()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,9 +25,14 @@ class MovieViewController: UIViewController {
     func initMovieView() {
         Style.styleFilledButton(myTicketButton)
         Style.styleFilledButton(logoutButton)
+        firstnameLabel.alpha = 0
+        firstnameLabel.layer.backgroundColor = UIColor.init(red: 42/255, green: 157/255, blue: 143/255, alpha: 1).cgColor
+        firstnameLabel.layer.cornerRadius = 20
+        firstnameLabel.textColor = .white
+        self.renderUsername()
     }
     
-    func renderUserName() {
+    func renderUsername() {
         let user = Auth.auth().currentUser
         if user == nil {
             return
@@ -34,5 +40,17 @@ class MovieViewController: UIViewController {
         
         let uid = user!.uid
         firstnameLabel.text = uid
+        self.db.renderFirstname(uid: uid, label: firstnameLabel)
     }
+    
+    @IBAction func onLogoutTapped(_ sender: Any) {
+        do {
+            try Auth.auth().signOut()
+        } catch {
+            print("Cannot signout")
+            return
+        }
+        self.navigationController?.popToRootViewController(animated: true)
+    }
+    
 }
