@@ -50,6 +50,36 @@ class LoginViewController: UIViewController {
         self.errorLabel.alpha = 1
     }
     
+    @IBAction func onLoginTapped(_ sender: Any) {
+        showLoading()
+        let email = emailField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        let password = passwordField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+
+        do {
+            try AuthUtils.validateLoginFields(email: email, password: password)
+        } catch AuthError.emptyFieldError(message: let errMsg) {
+            self.showErrorMsg(msg: errMsg)
+            return
+        } catch {
+            self.showErrorMsg(msg: "Unexpected error!")
+            return
+        }
+
+        Auth.auth().signIn(withEmail: email, password: password) {(result, err) in
+            if err != nil {
+                self.showErrorMsg(msg: "Incorrect email or password!")
+                return
+            }
+
+            let uid = result!.user.uid
+
+            self.showSuccessMsg()
+            print("Login user: ", uid)
+            self.navToMovie()
+        }
+    }
+    
+    
 //    @IBAction func onLoginTapped(_ sender: Any) throws {
 //        showLoading()
 //        let email = emailField.text!.trimmingCharacters(in: .whitespacesAndNewlines)

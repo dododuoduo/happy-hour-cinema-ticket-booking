@@ -6,6 +6,7 @@
 
 import Foundation
 import UIKit
+import FirebaseAuth
 
 class HomeViewController: UIViewController {
     
@@ -16,10 +17,26 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         print("Home view Controller works!")
         initHomeView()
+        navIfLoggedIn()
     }
     
     func initHomeView() {
         Style.styleFilledButton(signupButton)
         Style.styleHollowButton(loginButton)
     }
+    
+    func navIfLoggedIn() {
+        let user = Auth.auth().currentUser
+        if user != nil {
+            print("Current user: ", user!.uid)
+            self.navToMovie()
+        } else {
+            print("No user logged in.")
+        }
+    }
+    
+    @objc func navToMovie() {
+        self.performSegue(withIdentifier: "homeToMovie", sender: nil)
+    }
+    
 }
