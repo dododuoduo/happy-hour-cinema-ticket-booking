@@ -61,13 +61,23 @@ class SeatsViewController: UIViewController {
     
     @IBAction func onConfirmOrderTapped(_ sender: Any) {
 //        self.db.updateReservedSeats()
-        if self.room != nil {
-            let newSelectedSeats = self.room!.selectedSeats
-            let reservedSeats = self.room!.reservedSeatsId
-            let allSeatsReserved = newSelectedSeats + reservedSeats
-            self.db.updateReservedSeats(mid: self.movidId, reservedSeats: allSeatsReserved)
+        if self.room == nil {
+            return
         }
+        
+        if self.room!.selectedSeats.count < self.maxSeatNum {
+            print("Select more seats!")
+            return
+        }
+        
+        let newSelectedSeats = self.room!.selectedSeats
+        let reservedSeats = self.room!.reservedSeatsId
+        let allSeatsReserved = newSelectedSeats + reservedSeats
+        self.db.updateReservedSeats(mid: self.movidId, reservedSeats: allSeatsReserved)
+        self.navToOrderConfirmation()
     }
     
-    
+    @objc func navToOrderConfirmation() {
+        self.performSegue(withIdentifier: "seatsToOrderConfirmation", sender: nil)
+    }
 }

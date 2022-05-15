@@ -258,7 +258,6 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Confirm Order"/>
                                 <connections>
                                     <action selector="onConfirmOrderTapped:" destination="5i3-qz-77O" eventType="touchUpInside" id="M8Z-RA-Gbk"/>
-                                    <segue destination="zif-F3-6sU" kind="show" id="2XB-Og-7EN"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Screen" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B8H-9o-qIV">
@@ -320,6 +319,7 @@
                         <outlet property="screenLabel" destination="B8H-9o-qIV" id="kZT-f0-WKo"/>
                         <outlet property="seatsSelectedLabel" destination="ydY-h7-EIt" id="UFE-Jb-5qw"/>
                         <outlet property="selectMoreLabel" destination="Ea1-G0-Bk5" id="IUh-Rf-FBR"/>
+                        <segue destination="zif-F3-6sU" kind="show" identifier="seatsToOrderConfirmation" id="wvw-KN-qpZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ajf-c2-dOs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
