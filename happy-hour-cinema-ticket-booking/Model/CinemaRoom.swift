@@ -49,7 +49,7 @@ class CinemaRoom {
     }
     
     func markReservedSeats() {
-        print("Reserved seats: ", self.reservedSeatsId)
+        print("CinemaRoom - markReservedSeats: ", self.reservedSeatsId)
         for seatId in self.reservedSeatsId {
             for seat in seats {
                 if seat.id == seatId {

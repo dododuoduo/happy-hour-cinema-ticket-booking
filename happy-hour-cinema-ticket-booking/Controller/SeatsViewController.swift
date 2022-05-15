@@ -16,9 +16,10 @@ class SeatsViewController: UIViewController {
     
     var movidId: String = "aaa"
     var maxSeatNum: Int = 4
-    var reservedSeatsId: [String] = []
+//    var reservedSeatsId: [String] = []
     var cinemaView: UIView?
     var room: CinemaRoom?
+    var db = DB()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,22 +45,29 @@ class SeatsViewController: UIViewController {
         }
     }
     
-    func getReservedSeats() {
-        self.reservedSeatsId = ["A2", "A5"]
-    }
-    
     func initCinema() {
-        self.getReservedSeats()
-        self.room = CinemaRoom(
-            superView: self.cinemaView!,
-            reservedSeatsId: self.reservedSeatsId,
-            maxSeatNum: self.maxSeatNum,
-            seatsSelectedLabel: self.seatsSelectedLabel,
-            selectMoreLabel: self.selectMoreLabel
-        )
-        self.room!.renderSeats()
+        self.db.getReservedSeats(mid: self.movidId) { (reservedSeatsId) in
+            print("initCinema - reservedSeats: ", reservedSeatsId)
+            self.room = CinemaRoom(
+                superView: self.cinemaView!,
+                reservedSeatsId: reservedSeatsId,
+                maxSeatNum: self.maxSeatNum,
+                seatsSelectedLabel: self.seatsSelectedLabel,
+                selectMoreLabel: self.selectMoreLabel
+            )
+            self.room!.renderSeats()
+        }
     }
     
+    @IBAction func onConfirmOrderTapped(_ sender: Any) {
+//        self.db.updateReservedSeats()
+        if self.room != nil {
+            let newSelectedSeats = self.room!.selectedSeats
+            let reservedSeats = self.room!.reservedSeatsId
+            let allSeatsReserved = newSelectedSeats + reservedSeats
+            self.db.updateReservedSeats(mid: self.movidId, reservedSeats: allSeatsReserved)
+        }
+    }
     
     
 }
