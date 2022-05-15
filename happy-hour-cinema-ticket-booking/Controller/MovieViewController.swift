@@ -39,8 +39,10 @@ class MovieViewController: UIViewController {
         }
         
         let uid = user!.uid
-        firstnameLabel.text = uid
-        self.db.renderFirstname(uid: uid, label: firstnameLabel)
+        self.db.getFirstname(uid: uid) { (firstname) in
+            self.firstnameLabel.text = firstname
+            self.firstnameLabel.alpha = 1
+        }
     }
     
     @IBAction func onLogoutTapped(_ sender: Any) {

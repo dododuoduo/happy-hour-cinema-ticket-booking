@@ -11,12 +11,14 @@ import Firebase
 
 class DB {
     var userCollection: Firebase.CollectionReference
-    var ticketCollection: Firebase.CollectionReference
+    var bookingCollection: Firebase.CollectionReference
+    var movieSeatsCollection: Firebase.CollectionReference
     
     init() {
         let db = Firestore.firestore()
         self.userCollection = db.collection("users")
-        self.ticketCollection = db.collection("tickets")
+        self.bookingCollection = db.collection("bookings")
+        self.movieSeatsCollection = db.collection("movieSeats")
     }
     
     func setUserInfo(uid: String, firstname: String, lastname: String, errorLabel: UILabel) {
@@ -32,21 +34,25 @@ class DB {
         }
     }
     
-    func renderFirstname(uid: String, label: UILabel) {
+    func getFirstname(uid: String, _ completion:@escaping (_ firstname: String?) -> Void) {
         let userDocRef = userCollection.document(uid)
+        
         userDocRef.getDocument { (document, error) in
             guard let data = document?.data(), error == nil else {
+                completion(nil)
                 return
             }
             
-            guard let lastname = data["firstname"] as? String else {
+            guard let firstname = data["firstname"] as? String else {
+                completion(nil)
                 return
             }
             
-            label.text = lastname
-            label.alpha = 1
+            completion(firstname)
         }
     }
+    
+    
 }
 
 
