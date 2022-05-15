@@ -23,13 +23,25 @@ class CinemaRoom {
     let seatsRow: Int = 5
     let seatsCol: Int = 8
     let seatSize: Int = 27
-    let seatGap: Int = 3
+    let seatGap: Int = 4
     var selectedSeats: [String] = []
     let reservedSeatsId: [String]
+    let maxSeatNum: Int
+    let seatsSelectedLabel: UILabel
+    let selectMoreLabel: UILabel
     
-    init (superView: UIView, reservedSeatsId: [String]) {
+    init (
+        superView: UIView,
+        reservedSeatsId: [String],
+        maxSeatNum: Int,
+        seatsSelectedLabel: UILabel,
+        selectMoreLabel: UILabel
+    ) {
         self.superView = superView
         self.reservedSeatsId = reservedSeatsId
+        self.maxSeatNum = maxSeatNum
+        self.seatsSelectedLabel = seatsSelectedLabel
+        self.selectMoreLabel = selectMoreLabel
         self.seats = []
         self.seatPos = []
         self.width = Int(self.superView.frame.width)
@@ -69,9 +81,19 @@ class CinemaRoom {
     }
     
     @IBAction func seatTapped(_ sender: Seat) {
+        if (self.selectedSeats.count >= self.maxSeatNum) {
+            return
+        }
         let selectedSeatId = sender.selectSeat()
         self.selectedSeats.append(selectedSeatId)
-        print("Selected seats: ", self.selectedSeats)
+        self.seatsSelectedLabel.text = "Seats selected: " + self.selectedSeats.joined(separator: ", ")
+        let seatsLeft = self.maxSeatNum - self.selectedSeats.count
+        if seatsLeft <= 0 {
+            self.selectMoreLabel.text = "All set!"
+
+        } else {
+            self.selectMoreLabel.text = "Select \(seatsLeft) more to go"
+        }
     }
     
     // generate a seat array
@@ -141,7 +163,6 @@ class CinemaRoom {
 //        print("Child height: ", seatsWrapperView.frame.height)
 //        print("Child center: ", seatsWrapperView.center)
 //
-//        self.superView.backgroundColor = .red
 //        seatsWrapperView.backgroundColor = .brown
     }
     

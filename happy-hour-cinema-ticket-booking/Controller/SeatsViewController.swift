@@ -11,6 +11,8 @@ class SeatsViewController: UIViewController {
     
     @IBOutlet weak var confirmOrderButton: UIButton!
     @IBOutlet weak var screenLabel: UILabel!
+    @IBOutlet weak var seatsSelectedLabel: UILabel!
+    @IBOutlet weak var selectMoreLabel: UILabel!
     
     var movidId: String = "aaa"
     var maxSeatNum: Int = 4
@@ -28,6 +30,8 @@ class SeatsViewController: UIViewController {
     }
     
     func initSeatsView() {
+        self.seatsSelectedLabel.text = "Seats selected: None"
+        self.selectMoreLabel.text = "Select \(self.maxSeatNum) more to go"
         self.screenLabel.layer.cornerRadius = 5
         self.screenLabel.layer.masksToBounds = true
         Style.styleFilledButton(self.confirmOrderButton)
@@ -46,7 +50,13 @@ class SeatsViewController: UIViewController {
     
     func initCinema() {
         self.getReservedSeats()
-        self.room = CinemaRoom(superView: self.cinemaView!, reservedSeatsId: self.reservedSeatsId)
+        self.room = CinemaRoom(
+            superView: self.cinemaView!,
+            reservedSeatsId: self.reservedSeatsId,
+            maxSeatNum: self.maxSeatNum,
+            seatsSelectedLabel: self.seatsSelectedLabel,
+            selectMoreLabel: self.selectMoreLabel
+        )
         self.room!.renderSeats()
     }
     
