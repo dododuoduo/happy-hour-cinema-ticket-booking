@@ -21,7 +21,6 @@
 		D597099B282F741E00642949 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D597099A282F741E00642949 /* SignupViewController.swift */; };
 		D597099D282F742D00642949 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D597099C282F742D00642949 /* LoginViewController.swift */; };
 		D597099F282F7DEC00642949 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = D597099E282F7DEC00642949 /* Style.swift */; };
-		D59709A1282F8A4100642949 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D59709A0282F8A4100642949 /* GoogleService-Info.plist */; };
 		D59709A4282F8DAD00642949 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = D59709A3282F8DAD00642949 /* FirebaseAnalytics */; };
 		D59709A6282F8DAD00642949 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = D59709A5282F8DAD00642949 /* FirebaseAnalyticsWithoutAdIdSupport */; };
 		D59709A8282F8DAD00642949 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = D59709A7282F8DAD00642949 /* FirebaseAuth */; };
@@ -54,7 +53,6 @@
 		D597099A282F741E00642949 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		D597099C282F742D00642949 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D597099E282F7DEC00642949 /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
-		D59709A0282F8A4100642949 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D59709B9282F934C00642949 /* AuthUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthUtils.swift; sourceTree = "<group>"; };
 		D59709BB282FB28C00642949 /* DB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DB.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -107,7 +105,6 @@
 				D5970987282E269100642949 /* View */,
 				D597097C282E1DCB00642949 /* Assets.xcassets */,
 				D5970981282E1DCB00642949 /* Info.plist */,
-				D59709A0282F8A4100642949 /* GoogleService-Info.plist */,
 			);
 			path = "happy-hour-cinema-ticket-booking";
 			sourceTree = "<group>";
@@ -221,7 +218,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5970980282E1DCB00642949 /* LaunchScreen.storyboard in Resources */,
-				D59709A1282F8A4100642949 /* GoogleService-Info.plist in Resources */,
 				D597097D282E1DCB00642949 /* Assets.xcassets in Resources */,
 				D597097B282E1DCA00642949 /* Main.storyboard in Resources */,
 			);
