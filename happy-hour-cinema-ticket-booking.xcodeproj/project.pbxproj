@@ -34,6 +34,8 @@
 		D59709B8282F8DAD00642949 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = D59709B7282F8DAD00642949 /* FirebaseStorageCombine-Community */; };
 		D59709BA282F934C00642949 /* AuthUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59709B9282F934C00642949 /* AuthUtils.swift */; };
 		D59709BC282FB28C00642949 /* DB.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59709BB282FB28C00642949 /* DB.swift */; };
+		D59709C02830FDC900642949 /* Seat.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59709BF2830FDC900642949 /* Seat.swift */; };
+		D59709C228311EF300642949 /* CinemaRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59709C128311EF300642949 /* CinemaRoom.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +57,8 @@
 		D597099E282F7DEC00642949 /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
 		D59709B9282F934C00642949 /* AuthUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthUtils.swift; sourceTree = "<group>"; };
 		D59709BB282FB28C00642949 /* DB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DB.swift; sourceTree = "<group>"; };
+		D59709BF2830FDC900642949 /* Seat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Seat.swift; sourceTree = "<group>"; };
+		D59709C128311EF300642949 /* CinemaRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinemaRoom.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +143,8 @@
 				D597099E282F7DEC00642949 /* Style.swift */,
 				D59709B9282F934C00642949 /* AuthUtils.swift */,
 				D59709BB282FB28C00642949 /* DB.swift */,
+				D59709BF2830FDC900642949 /* Seat.swift */,
+				D59709C128311EF300642949 /* CinemaRoom.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -230,8 +236,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D59709C228311EF300642949 /* CinemaRoom.swift in Sources */,
 				D59709BC282FB28C00642949 /* DB.swift in Sources */,
 				D5970994282E3A4A00642949 /* TicketViewController.swift in Sources */,
+				D59709C02830FDC900642949 /* Seat.swift in Sources */,
 				D59709BA282F934C00642949 /* AuthUtils.swift in Sources */,
 				D597098C282E378600642949 /* MovieViewController.swift in Sources */,
 				D597099B282F741E00642949 /* SignupViewController.swift in Sources */,

@@ -249,20 +249,53 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a77-Lb-2ii">
-                                <rect key="frame" x="138" y="433" width="139" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a77-Lb-2ii">
+                                <rect key="frame" x="20" y="802" width="374" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="kxv-lF-bIV"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Confirm Order"/>
                                 <connections>
                                     <segue destination="zif-F3-6sU" kind="show" id="2XB-Og-7EN"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Screen" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B8H-9o-qIV">
+                                <rect key="frame" x="117" y="98" width="180" height="80"/>
+                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="180" id="RBv-qF-DoZ"/>
+                                    <constraint firstAttribute="height" constant="80" id="jSB-Pp-nxU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view tag="100" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="von-tI-99A">
+                                <rect key="frame" x="20" y="198" width="374" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="J3w-bo-UW0"/>
+                                    <constraint firstAttribute="width" constant="374" id="ef3-y3-zWE"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="5HM-Xn-oMf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="a77-Lb-2ii" firstAttribute="leading" secondItem="5HM-Xn-oMf" secondAttribute="leading" constant="20" id="5co-Ex-mcB"/>
+                            <constraint firstItem="5HM-Xn-oMf" firstAttribute="trailing" secondItem="a77-Lb-2ii" secondAttribute="trailing" constant="20" id="FSl-B8-hc9"/>
+                            <constraint firstItem="5HM-Xn-oMf" firstAttribute="bottom" secondItem="a77-Lb-2ii" secondAttribute="bottom" constant="20" id="XWb-wx-3Nn"/>
+                            <constraint firstItem="von-tI-99A" firstAttribute="centerX" secondItem="EdY-xZ-f6d" secondAttribute="centerX" id="aoe-hi-Ya2"/>
+                            <constraint firstItem="B8H-9o-qIV" firstAttribute="top" secondItem="5HM-Xn-oMf" secondAttribute="top" constant="10" id="h2B-xY-8wa"/>
+                            <constraint firstItem="von-tI-99A" firstAttribute="top" secondItem="B8H-9o-qIV" secondAttribute="bottom" constant="20" id="jYN-hY-ccM"/>
+                            <constraint firstItem="B8H-9o-qIV" firstAttribute="centerX" secondItem="EdY-xZ-f6d" secondAttribute="centerX" id="pUS-B1-Zxj"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Select Seats" id="zrh-ag-LIt"/>
+                    <connections>
+                        <outlet property="confirmOrderButton" destination="a77-Lb-2ii" id="6GX-ZG-o0W"/>
+                        <outlet property="screenLabel" destination="B8H-9o-qIV" id="kZT-f0-WKo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ajf-c2-dOs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -394,9 +427,12 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="TPs-IK-jgv"/>
+        <segue reference="S3E-Dx-V5H"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
