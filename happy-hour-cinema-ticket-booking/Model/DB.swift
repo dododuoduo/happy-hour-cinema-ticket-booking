@@ -71,7 +71,7 @@ class DB {
         }
     }
     
-    func updateReservedSeats(mid: String, reservedSeats: [String]) {
+    func updateReservedSeats(mid: String, reservedSeats: [String], _ completion:@escaping (_ success: Bool) -> Void) {
         let movieDocRef = self.reservedSeatsCollection.document(mid)
         
         movieDocRef.setData([
@@ -79,9 +79,11 @@ class DB {
         ]) { (error) in
             if error != nil {
                 print("Fail to update reserved seats")
-            } else {
-                print("Success: reserved seats updated")
+                completion(false)
             }
+            
+            print("Success: reserved seats updated")
+            completion(true)
         }
     }
     
@@ -160,6 +162,45 @@ class DB {
             completion(Booking(
                 bid: bid, uid: uid, mid: mid, movieName: movieName, numPeople: numPeople, reservedSeats: reservedSeats
             ))
+        }
+    }
+    
+    func getBookingByUid(uid: String, _ completion:@escaping (_ bookings: [Booking]) -> Void) {
+        let query = self.bookingCollection.whereField("uid", isEqualTo: uid)
+        query.getDocuments() { (querySnapshot, err) in
+            guard err == nil else {
+                print("getBookingByUid - fail to get bookings")
+                completion([])
+                return
+            }
+            
+            var userBookings:[Booking] = []
+            for document in querySnapshot!.documents {
+                let data = document.data()
+                let booking = Booking(
+                    bid: data["bid"] as! String,
+                    uid: data["uid"] as! String,
+                    mid: data["mid"] as! String,
+                    movieName: data["movieName"] as! String,
+                    numPeople: data["numPeople"] as! Int,
+                    reservedSeats: data["reservedSeats"] as! [String]
+                )
+                userBookings.append(booking)
+            }
+            completion(userBookings)
+        }
+    }
+    
+    func removeBookingByBid(bid: String, _ completion:@escaping (_ success: Bool) -> Void) {
+        let bookingDocRef = self.bookingCollection.document(bid)
+        
+        bookingDocRef.delete { err in
+            guard err == nil else {
+                print("removeBookingByBid - fail to remove booking")
+                completion(false)
+                return
+            }
+            completion(true)
         }
     }
     

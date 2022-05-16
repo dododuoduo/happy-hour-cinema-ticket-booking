@@ -87,8 +87,11 @@ class SeatsViewController: UIViewController {
             self.bookingId = bid
             let reservedSeats = self.room!.reservedSeatsId
             let allSeatsReserved = newSelectedSeats + reservedSeats
-            self.db.updateReservedSeats(mid: self.movidId, reservedSeats: allSeatsReserved)
-            self.navToOrderConfirmation()
+            self.db.updateReservedSeats(mid: self.movidId, reservedSeats: allSeatsReserved) {success in
+                if success {
+                    self.navToOrderConfirmation()
+                }
+            }
         }
     }
     
