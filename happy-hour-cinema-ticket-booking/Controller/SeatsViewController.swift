@@ -6,6 +6,7 @@
 
 import Foundation
 import UIKit
+import FirebaseAuth
 
 class SeatsViewController: UIViewController {
     
@@ -14,12 +15,14 @@ class SeatsViewController: UIViewController {
     @IBOutlet weak var seatsSelectedLabel: UILabel!
     @IBOutlet weak var selectMoreLabel: UILabel!
     
-    var movidId: String = "aaa"
-    var maxSeatNum: Int = 4
-//    var reservedSeatsId: [String] = []
+    var movidId: String = "aaa"               // TODO: remove hardcoded String <"aaa">, receive movidId from previous controller
+    var movieName: String = "Doctor Strange"  // TODO: remove hardcoded String <"Doctor Strange">, receive movieName from previous controller
+    var maxSeatNum: Int = 4                   // TODO: remove hardcoded Int<4>, receive maxSeatNum (i.e. number of people) from previous controller
+    
     var cinemaView: UIView?
     var room: CinemaRoom?
     var db = DB()
+    var bookingId: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +39,6 @@ class SeatsViewController: UIViewController {
         self.screenLabel.layer.cornerRadius = 5
         self.screenLabel.layer.masksToBounds = true
         Style.styleFilledButton(self.confirmOrderButton)
-        // clear old seats
     }
     
     func resetCinemaView() {
@@ -60,7 +62,6 @@ class SeatsViewController: UIViewController {
     }
     
     @IBAction func onConfirmOrderTapped(_ sender: Any) {
-//        self.db.updateReservedSeats()
         if self.room == nil {
             return
         }
@@ -70,14 +71,37 @@ class SeatsViewController: UIViewController {
             return
         }
         
+        // add the booking to the database
         let newSelectedSeats = self.room!.selectedSeats
-        let reservedSeats = self.room!.reservedSeatsId
-        let allSeatsReserved = newSelectedSeats + reservedSeats
-        self.db.updateReservedSeats(mid: self.movidId, reservedSeats: allSeatsReserved)
-        self.navToOrderConfirmation()
+        let uid = Auth.auth().currentUser!.uid
+        let booking: Booking = Booking(
+            bid: "",
+            uid: uid,
+            mid: self.movidId,
+            movieName: self.movieName,
+            numPeople: self.maxSeatNum,
+            reservedSeats: newSelectedSeats
+        )
+        self.db.addBooking(booking: booking) { bid in
+            // update reserved seats for the movie
+            self.bookingId = bid
+            let reservedSeats = self.room!.reservedSeatsId
+            let allSeatsReserved = newSelectedSeats + reservedSeats
+            self.db.updateReservedSeats(mid: self.movidId, reservedSeats: allSeatsReserved)
+            self.navToOrderConfirmation()
+        }
     }
     
     @objc func navToOrderConfirmation() {
         self.performSegue(withIdentifier: "seatsToOrderConfirmation", sender: nil)
+    }
+    
+    // pass booking id to the order confirmation controller
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "seatsToOrderConfirmation") {
+            if let destinationVC = segue.destination as? OrderConfirmationViewController {
+                destinationVC.bid = self.bookingId
+            }
+        }
     }
 }

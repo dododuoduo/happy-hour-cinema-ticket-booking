@@ -36,6 +36,7 @@
 		D59709BC282FB28C00642949 /* DB.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59709BB282FB28C00642949 /* DB.swift */; };
 		D59709C02830FDC900642949 /* Seat.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59709BF2830FDC900642949 /* Seat.swift */; };
 		D59709C228311EF300642949 /* CinemaRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59709C128311EF300642949 /* CinemaRoom.swift */; };
+		D59709C62832201F00642949 /* Booking.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59709C52832201F00642949 /* Booking.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +60,7 @@
 		D59709BB282FB28C00642949 /* DB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DB.swift; sourceTree = "<group>"; };
 		D59709BF2830FDC900642949 /* Seat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Seat.swift; sourceTree = "<group>"; };
 		D59709C128311EF300642949 /* CinemaRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinemaRoom.swift; sourceTree = "<group>"; };
+		D59709C52832201F00642949 /* Booking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Booking.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +147,7 @@
 				D59709BB282FB28C00642949 /* DB.swift */,
 				D59709BF2830FDC900642949 /* Seat.swift */,
 				D59709C128311EF300642949 /* CinemaRoom.swift */,
+				D59709C52832201F00642949 /* Booking.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -237,6 +240,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D59709C228311EF300642949 /* CinemaRoom.swift in Sources */,
+				D59709C62832201F00642949 /* Booking.swift in Sources */,
 				D59709BC282FB28C00642949 /* DB.swift in Sources */,
 				D5970994282E3A4A00642949 /* TicketViewController.swift in Sources */,
 				D59709C02830FDC900642949 /* Seat.swift in Sources */,
