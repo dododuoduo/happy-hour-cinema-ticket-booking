@@ -85,6 +85,84 @@ class DB {
         }
     }
     
+//    struct Booking {
+//        let bid: String             // booking id
+//        let uid: String             // user id
+//        let mid: String             // movie id
+//        let movieName: String
+//        let numPeople: Int
+//        let reservedSeats: [String]
+//    }
+    
+    func addBooking(booking: Booking, _ completion:@escaping (_ bid: String?) -> Void) {
+        let bookingRef = self.bookingCollection.document()
+        let bid = bookingRef.documentID
+        
+        bookingRef.setData([
+            "bid": bid,
+            "uid": booking.uid,
+            "mid": booking.mid,
+            "movieName": booking.movieName,
+            "numPeople": booking.numPeople,
+            "reservedSeats": booking.reservedSeats
+        ]) { (error) in
+            guard error == nil else {
+                print("addBooking - failed to add")
+                completion(nil)
+                return
+            }
+            
+            print("addBooking - failed to add")
+            completion(bid)
+        }
+    }
+    
+    func getBooking(bid: String, _ completion:@escaping (_ booking: Booking?) -> Void) {
+        let bookingDocRef = self.bookingCollection.document(bid)
+        
+        bookingDocRef.getDocument { (document, error) in
+            guard let data = document?.data(), error == nil else {
+                completion(nil)
+                print("getBooking - no doc found, return nil")
+                return
+            }
+
+            guard let bid = data["bid"] as? String else {
+              completion(nil)
+              return
+            }
+            
+            guard let uid = data["uid"] as? String else {
+              completion(nil)
+              return
+            }
+            
+            guard let mid = data["mid"] as? String else {
+              completion(nil)
+              return
+            }
+            
+            guard let movieName = data["movieName"] as? String else {
+              completion(nil)
+              return
+            }
+            
+            guard let numPeople = data["numPeople"] as? Int else {
+              completion(nil)
+              return
+            }
+            
+            guard let reservedSeats = data["reservedSeats"] as? [String] else {
+              completion(nil)
+              return
+            }
+            
+            completion(Booking(
+                bid: bid, uid: uid, mid: mid, movieName: movieName, numPeople: numPeople, reservedSeats: reservedSeats
+            ))
+        }
+    }
+    
     
 }
 
