@@ -31,7 +31,7 @@ class OrderConfirmationViewController: UIViewController {
     func initOrderConfirmationView() {
         print("Booking struct is ready: \(self.booking!)")
         print("Firstname is ready: \(self.firstname!)")
-        // TODO: entry point of all your codes, firstname and booking object is ready
+        // TODO: entry point of all your codes, firstname and booking object is ready!!
         
         
         
