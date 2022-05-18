@@ -47,5 +47,10 @@ class OrderConfirmationViewController: UIViewController {
         numPeople.text = String(self.booking!.numPeople)
         reservedSeats.text = self.booking!.reservedSeats.joined(separator: ",")
     }
-
+    
+    @IBAction func onMoviesTapped(_ sender: Any) {
+        if let movieVC = navigationController?.viewControllers.first(where: {$0 is MovieViewController}) {
+              navigationController?.popToViewController(movieVC, animated: true)
+        }
+    }
 }

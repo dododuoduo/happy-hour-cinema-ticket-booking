@@ -539,7 +539,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Movies"/>
                                 <connections>
-                                    <segue destination="Sl0-7z-9qC" kind="show" id="H2Q-4k-YAA"/>
+                                    <action selector="onMoviesTapped:" destination="zif-F3-6sU" eventType="touchUpInside" id="Ahh-3S-XRo"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="4gr-RX-G2w">
