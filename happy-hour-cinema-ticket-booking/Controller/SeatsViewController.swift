@@ -10,6 +10,8 @@ import FirebaseAuth
 
 class SeatsViewController: UIViewController {
     
+    @IBOutlet weak var reservedIndicatorLabel: UILabel!
+    @IBOutlet weak var avaliableIndicatorLabel: UILabel!
     @IBOutlet weak var confirmOrderButton: UIButton!
     @IBOutlet weak var screenLabel: UILabel!
     @IBOutlet weak var seatsSelectedLabel: UILabel!
@@ -34,6 +36,12 @@ class SeatsViewController: UIViewController {
     }
     
     func initSeatsView() {
+        self.reservedIndicatorLabel.layer.cornerRadius = 3
+        self.reservedIndicatorLabel.backgroundColor = .red
+        self.reservedIndicatorLabel.layer.masksToBounds = true
+        self.avaliableIndicatorLabel.layer.cornerRadius = 3
+        self.avaliableIndicatorLabel.backgroundColor = .green
+        self.avaliableIndicatorLabel.layer.masksToBounds = true
         self.seatsSelectedLabel.text = "Seats selected: None"
         self.selectMoreLabel.text = "Select \(self.maxSeatNum) more to go"
         self.screenLabel.layer.cornerRadius = 5
