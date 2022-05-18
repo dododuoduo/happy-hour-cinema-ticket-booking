@@ -8,11 +8,13 @@ import Foundation
 import UIKit
 
 class OrderConfirmationViewController: UIViewController {
+    @IBOutlet weak var firstNameLabel: UILabel!
     @IBOutlet weak var bookingId: UILabel!
     @IBOutlet weak var movieName: UILabel!
-    @IBOutlet weak var mid: UILabel!
     @IBOutlet weak var numPeople: UILabel!
     @IBOutlet weak var reservedSeats: UILabel!
+    @IBOutlet weak var moviesButton: UIButton!
+    
     
     var bid: String?
     let db = DB()
@@ -38,13 +40,12 @@ class OrderConfirmationViewController: UIViewController {
         print("Firstname is ready: \(self.firstname!)")
         // TODO: entry point of all your codes, firstname and booking object is ready
         
-        
+        Style.styleFilledButton(self.moviesButton)
+        self.firstNameLabel.text = self.firstname! + "'s new order"
         bookingId.text = self.booking?.bid
         movieName.text = self.booking?.movieName
-        mid.text = self.booking?.mid
         numPeople.text = String(self.booking!.numPeople)
         reservedSeats.text = self.booking!.reservedSeats.joined(separator: ",")
-
     }
 
 }
