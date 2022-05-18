@@ -15,7 +15,7 @@ class SeatsViewController: UIViewController {
     @IBOutlet weak var seatsSelectedLabel: UILabel!
     @IBOutlet weak var selectMoreLabel: UILabel!
     
-    var movidId: String = "aaa"               // TODO: remove hardcoded String <"aaa">, receive movidId from previous controller
+    var movieId: String = "aaa"               // TODO: remove hardcoded String <"aaa">, receive movidId from previous controller
     var movieName: String = "Doctor Strange"  // TODO: remove hardcoded String <"Doctor Strange">, receive movieName from previous controller
     var maxSeatNum: Int = 4                   // TODO: remove hardcoded Int<4>, receive maxSeatNum (i.e. number of people) from previous controller
     
@@ -48,7 +48,7 @@ class SeatsViewController: UIViewController {
     }
     
     func initCinema() {
-        self.db.getReservedSeats(mid: self.movidId) { (reservedSeatsId) in
+        self.db.getReservedSeats(mid: self.movieId) { (reservedSeatsId) in
             print("initCinema - reservedSeats: ", reservedSeatsId)
             self.room = CinemaRoom(
                 superView: self.cinemaView!,
@@ -77,7 +77,7 @@ class SeatsViewController: UIViewController {
         let booking: Booking = Booking(
             bid: "",
             uid: uid,
-            mid: self.movidId,
+            mid: self.movieId,
             movieName: self.movieName,
             numPeople: self.maxSeatNum,
             reservedSeats: newSelectedSeats
@@ -87,7 +87,7 @@ class SeatsViewController: UIViewController {
             self.bookingId = bid
             let reservedSeats = self.room!.reservedSeatsId
             let allSeatsReserved = newSelectedSeats + reservedSeats
-            self.db.updateReservedSeats(mid: self.movidId, reservedSeats: allSeatsReserved) {success in
+            self.db.updateReservedSeats(mid: self.movieId, reservedSeats: allSeatsReserved) {success in
                 if success {
                     self.navToOrderConfirmation()
                 }
