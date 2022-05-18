@@ -43,12 +43,21 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appstore" translatesAutoresizingMaskIntoConstraints="NO" id="JYo-vI-VUR">
+                                <rect key="frame" x="70" y="194" width="180" height="180"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="180" id="L77-AZ-dTD"/>
+                                    <constraint firstAttribute="height" constant="180" id="isq-5A-Ia6"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="JYo-vI-VUR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Alt-u5-Yj4"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="elA-MG-1SE" secondAttribute="bottom" constant="40" id="F29-M2-0TV"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="elA-MG-1SE" secondAttribute="trailing" constant="40" id="O6H-Qe-p3U"/>
+                            <constraint firstItem="JYo-vI-VUR" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Rzv-HT-Zc0"/>
                             <constraint firstItem="elA-MG-1SE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="bcb-wf-pUJ"/>
                         </constraints>
                     </view>
@@ -148,11 +157,11 @@
             <objects>
                 <viewController id="Sl0-7z-9qC" customClass="MovieViewController" customModule="happy_hour_cinema_ticket_booking" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7kC-8B-XgE">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="6tP-po-wC4">
-                                <rect key="frame" x="20" y="0.0" width="280" height="40"/>
+                                <rect key="frame" x="20" y="44" width="280" height="40"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uyr-Wy-z9y">
                                         <rect key="frame" x="0.0" y="0.0" width="80" height="40"/>
@@ -186,7 +195,7 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jf5-Jg-7UR">
-                                <rect key="frame" x="40" y="60" width="100" height="160"/>
+                                <rect key="frame" x="40" y="104" width="100" height="160"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="160" id="RLZ-uQ-L8F"/>
                                     <constraint firstAttribute="width" constant="100" id="zru-L2-Ahr"/>
@@ -200,21 +209,21 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fHI-dm-acH">
-                                <rect key="frame" x="40" y="240" width="100" height="160"/>
+                                <rect key="frame" x="40" y="284" width="100" height="160"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain">
                                     <backgroundConfiguration key="background" image="badGuys"/>
                                 </buttonConfiguration>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ts-IH-2Yr">
-                                <rect key="frame" x="180" y="240" width="100" height="160"/>
+                                <rect key="frame" x="180" y="284" width="100" height="160"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain">
                                     <backgroundConfiguration key="background" image="batman"/>
                                 </buttonConfiguration>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nVa-WQ-64o">
-                                <rect key="frame" x="180" y="60" width="100" height="160"/>
+                                <rect key="frame" x="180" y="104" width="100" height="160"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain">
                                     <backgroundConfiguration key="background" image="sonic"/>
@@ -265,11 +274,11 @@
             <objects>
                 <viewController id="Oec-Pk-Mg4" customClass="OrderDetailsViewController" customModule="happy_hour_cinema_ticket_booking" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jbu-bb-4uD">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="de6-xe-XwY">
-                                <rect key="frame" x="20" y="0.0" width="280" height="300"/>
+                                <rect key="frame" x="20" y="44" width="280" height="300"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie Name" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ww5-S2-5cY">
                                         <rect key="frame" x="0.0" y="0.0" width="280" height="80"/>
@@ -295,7 +304,7 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XYV-7D-TjV">
-                                <rect key="frame" x="20" y="497" width="280" height="31"/>
+                                <rect key="frame" x="20" y="517" width="280" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Select Seats"/>
                                 <connections>
@@ -303,19 +312,19 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of tickets:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ykk-n6-nSN">
-                                <rect key="frame" x="20" y="320" width="280" height="20.5"/>
+                                <rect key="frame" x="20" y="364" width="280" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6ed-ah-tqu">
-                                <rect key="frame" x="90" y="360.5" width="140" height="40"/>
+                                <rect key="frame" x="90" y="404.5" width="140" height="40"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ciq-yR-MKL">
                                         <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="RQh-98-TRD"/>
-                                            <constraint firstAttribute="width" constant="40" id="cH0-OX-M5I"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="cH0-OX-M5I"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="-"/>
@@ -337,7 +346,7 @@
                                         <rect key="frame" x="100" y="0.0" width="40" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="abd-3Z-raK"/>
-                                            <constraint firstAttribute="width" constant="40" id="ffT-oU-IIo"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="ffT-oU-IIo"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="+"/>
@@ -387,11 +396,11 @@
             <objects>
                 <viewController id="5i3-qz-77O" customClass="SeatsViewController" customModule="happy_hour_cinema_ticket_booking" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EdY-xZ-f6d">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a77-Lb-2ii">
-                                <rect key="frame" x="20" y="488" width="280" height="40"/>
+                                <rect key="frame" x="20" y="508" width="280" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="kxv-lF-bIV"/>
                                 </constraints>
@@ -402,7 +411,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Screen" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B8H-9o-qIV">
-                                <rect key="frame" x="70" y="10" width="180" height="60"/>
+                                <rect key="frame" x="70" y="54" width="180" height="60"/>
                                 <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="180" id="RBv-qF-DoZ"/>
@@ -413,7 +422,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="N5d-n5-V42">
-                                <rect key="frame" x="25" y="360" width="270" height="61"/>
+                                <rect key="frame" x="25" y="404" width="270" height="61"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seats selected: None" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ydY-h7-EIt">
                                         <rect key="frame" x="0.0" y="0.0" width="270" height="20.5"/>
@@ -433,14 +442,14 @@
                                 </constraints>
                             </stackView>
                             <view tag="100" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="von-tI-99A">
-                                <rect key="frame" x="-27" y="110" width="374" height="250"/>
+                                <rect key="frame" x="-27" y="154" width="374" height="250"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="J3w-bo-UW0"/>
                                     <constraint firstAttribute="width" constant="374" id="ef3-y3-zWE"/>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="uhg-PG-WLR">
-                                <rect key="frame" x="19" y="80" width="282.5" height="30"/>
+                                <rect key="frame" x="19" y="124" width="282.5" height="30"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="awQ-3P-NNk">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="30"/>
@@ -519,11 +528,11 @@
             <objects>
                 <viewController id="zif-F3-6sU" customClass="OrderConfirmationViewController" customModule="happy_hour_cinema_ticket_booking" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lu0-oT-tzA">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VfK-ap-8Mr">
-                                <rect key="frame" x="20" y="488" width="280" height="40"/>
+                                <rect key="frame" x="20" y="508" width="280" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="OU5-cG-NO2"/>
                                 </constraints>
@@ -534,7 +543,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="4gr-RX-G2w">
-                                <rect key="frame" x="20" y="0.0" width="280" height="360"/>
+                                <rect key="frame" x="20" y="44" width="280" height="360"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Order by firstname" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ynC-J0-b0A">
                                         <rect key="frame" x="0.0" y="0.0" width="280" height="40"/>
@@ -702,7 +711,7 @@
             <objects>
                 <viewController id="IF3-6P-Hnc" customClass="TicketViewController" customModule="happy_hour_cinema_ticket_booking" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="z7O-kO-ixU">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t1D-Md-TxB">
@@ -747,10 +756,10 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="wvw-KN-qpZ"/>
-        <segue reference="H2Q-4k-YAA"/>
+        <segue reference="S3E-Dx-V5H"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="appstore" width="166.5" height="166.5"/>
         <image name="badGuys" width="322" height="516"/>
         <image name="batman" width="346" height="516"/>
         <image name="doctorStrange" width="1688" height="2500"/>
