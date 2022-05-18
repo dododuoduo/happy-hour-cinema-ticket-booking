@@ -8,6 +8,11 @@ import Foundation
 import UIKit
 
 class OrderConfirmationViewController: UIViewController {
+    @IBOutlet weak var bookingId: UILabel!
+    @IBOutlet weak var movieName: UILabel!
+    @IBOutlet weak var mid: UILabel!
+    @IBOutlet weak var numPeople: UILabel!
+    @IBOutlet weak var reservedSeats: UILabel!
     
     var bid: String?
     let db = DB()
@@ -34,7 +39,12 @@ class OrderConfirmationViewController: UIViewController {
         // TODO: entry point of all your codes, firstname and booking object is ready
         
         
-        
+        bookingId.text = self.booking?.bid
+        movieName.text = self.booking?.movieName
+        mid.text = self.booking?.mid
+        numPeople.text = String(self.booking!.numPeople)
+        reservedSeats.text = self.booking!.reservedSeats.joined(separator: ",")
+
     }
 
 }
