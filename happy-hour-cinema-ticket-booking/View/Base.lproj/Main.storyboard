@@ -151,15 +151,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o5o-SN-7Ne">
-                                <rect key="frame" x="149" y="420" width="116" height="56"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="A Movie"/>
-                                <connections>
-                                    <segue destination="Oec-Pk-Mg4" kind="show" id="XE8-0Z-rol"/>
-                                </connections>
-                            </button>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="6tP-po-wC4">
                                 <rect key="frame" x="20" y="44" width="280" height="40"/>
                                 <subviews>
@@ -172,7 +163,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="19d-rq-1Ai">
                                         <rect key="frame" x="100" y="0.0" width="80" height="40"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="My Tickets"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Tickets"/>
                                         <connections>
                                             <segue destination="IF3-6P-Hnc" kind="show" id="JzO-IF-efP"/>
                                         </connections>
@@ -194,25 +185,80 @@
                                     <constraint firstItem="oVW-pv-Xu7" firstAttribute="height" secondItem="uyr-Wy-z9y" secondAttribute="height" id="LDB-92-H1f"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jf5-Jg-7UR">
+                                <rect key="frame" x="40" y="104" width="100" height="160"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="160" id="RLZ-uQ-L8F"/>
+                                    <constraint firstAttribute="width" constant="100" id="zru-L2-Ahr"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <backgroundConfiguration key="background" image="doctorStrange"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="onDoctorStrangeTapped:" destination="Sl0-7z-9qC" eventType="touchUpInside" id="0vo-jT-Db4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fHI-dm-acH">
+                                <rect key="frame" x="40" y="284" width="100" height="160"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <backgroundConfiguration key="background" image="badGuys"/>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ts-IH-2Yr">
+                                <rect key="frame" x="180" y="284" width="100" height="160"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <backgroundConfiguration key="background" image="batman"/>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nVa-WQ-64o">
+                                <rect key="frame" x="180" y="104" width="100" height="160"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <backgroundConfiguration key="background" image="sonic"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="onSonicTapped:" destination="Sl0-7z-9qC" eventType="touchUpInside" id="zq2-hv-cNE"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="jYs-4K-bs2"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="0ts-IH-2Yr" firstAttribute="leading" secondItem="fHI-dm-acH" secondAttribute="trailing" constant="40" id="4lO-A1-IWk"/>
+                            <constraint firstItem="fHI-dm-acH" firstAttribute="leading" secondItem="jYs-4K-bs2" secondAttribute="leading" constant="40" id="6DX-pC-iXD"/>
+                            <constraint firstItem="nVa-WQ-64o" firstAttribute="height" secondItem="Jf5-Jg-7UR" secondAttribute="height" id="7M4-VS-Kgx"/>
+                            <constraint firstItem="nVa-WQ-64o" firstAttribute="top" secondItem="6tP-po-wC4" secondAttribute="bottom" constant="20" id="CdU-ol-AbX"/>
+                            <constraint firstItem="fHI-dm-acH" firstAttribute="top" secondItem="Jf5-Jg-7UR" secondAttribute="bottom" constant="20" id="J5R-Kj-bP0"/>
                             <constraint firstItem="jYs-4K-bs2" firstAttribute="trailing" secondItem="6tP-po-wC4" secondAttribute="trailing" constant="20" id="NRa-T0-tUE"/>
+                            <constraint firstItem="nVa-WQ-64o" firstAttribute="leading" secondItem="Jf5-Jg-7UR" secondAttribute="trailing" constant="40" id="OLa-Fo-KBs"/>
                             <constraint firstItem="6tP-po-wC4" firstAttribute="leading" secondItem="jYs-4K-bs2" secondAttribute="leading" constant="20" id="Psk-DS-riv"/>
+                            <constraint firstItem="nVa-WQ-64o" firstAttribute="width" secondItem="Jf5-Jg-7UR" secondAttribute="width" id="QyU-gf-Ajh"/>
+                            <constraint firstItem="Jf5-Jg-7UR" firstAttribute="top" secondItem="6tP-po-wC4" secondAttribute="bottom" constant="20" id="R8z-1w-6T1"/>
+                            <constraint firstItem="Jf5-Jg-7UR" firstAttribute="leading" secondItem="jYs-4K-bs2" secondAttribute="leading" constant="40" id="V0U-Td-rBh"/>
                             <constraint firstItem="6tP-po-wC4" firstAttribute="top" secondItem="jYs-4K-bs2" secondAttribute="top" id="cYX-Lk-iM4"/>
+                            <constraint firstItem="fHI-dm-acH" firstAttribute="height" secondItem="Jf5-Jg-7UR" secondAttribute="height" id="foP-Qw-Ec5"/>
+                            <constraint firstItem="0ts-IH-2Yr" firstAttribute="top" secondItem="nVa-WQ-64o" secondAttribute="bottom" constant="20" id="hzX-0d-goZ"/>
+                            <constraint firstItem="0ts-IH-2Yr" firstAttribute="height" secondItem="Jf5-Jg-7UR" secondAttribute="height" id="i17-EP-0Xy"/>
+                            <constraint firstItem="0ts-IH-2Yr" firstAttribute="width" secondItem="Jf5-Jg-7UR" secondAttribute="width" id="sV4-Hw-u8m"/>
+                            <constraint firstItem="fHI-dm-acH" firstAttribute="width" secondItem="Jf5-Jg-7UR" secondAttribute="width" id="tuG-O4-2kl"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Movies" id="34T-M5-4gw"/>
                     <connections>
+                        <outlet property="doctorStrangeButton" destination="Jf5-Jg-7UR" id="9iC-GF-WsC"/>
                         <outlet property="firstnameLabel" destination="uyr-Wy-z9y" id="JV3-vZ-oxZ"/>
                         <outlet property="logoutButton" destination="oVW-pv-Xu7" id="blc-ic-qhT"/>
                         <outlet property="myTicketButton" destination="19d-rq-1Ai" id="58Y-xh-DH9"/>
+                        <outlet property="sonicButton" destination="nVa-WQ-64o" id="HSe-M4-hLP"/>
+                        <segue destination="Oec-Pk-Mg4" kind="show" identifier="movieToOrderDetails" id="reZ-YY-T0b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LqD-rO-Zv8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1204" y="110"/>
+            <point key="canvasLocation" x="1203.75" y="109.85915492957747"/>
         </scene>
         <!--Order Details-->
         <scene sceneID="QYd-hd-9rV">
@@ -222,20 +268,115 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XYV-7D-TjV">
-                                <rect key="frame" x="155" y="433" width="105" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="de6-xe-XwY">
+                                <rect key="frame" x="20" y="44" width="280" height="300"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie Name" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ww5-S2-5cY">
+                                        <rect key="frame" x="0.0" y="0.0" width="280" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="SXQ-Ib-8Je"/>
+                                            <constraint firstAttribute="width" constant="280" id="blt-vh-oqq"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie Description: " textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tdc-Cd-dGV">
+                                        <rect key="frame" x="0.0" y="80" width="280" height="220"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="280" id="wLj-vq-Dam"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="bRQ-w2-s32"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XYV-7D-TjV">
+                                <rect key="frame" x="20" y="517" width="280" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Select Seats"/>
                                 <connections>
-                                    <segue destination="5i3-qz-77O" kind="show" id="xTr-X9-Qkh"/>
+                                    <action selector="onSelectSeatsTapped:" destination="Oec-Pk-Mg4" eventType="touchUpInside" id="x75-V1-xx1"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of tickets:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ykk-n6-nSN">
+                                <rect key="frame" x="20" y="364" width="280" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6ed-ah-tqu">
+                                <rect key="frame" x="90" y="404.5" width="140" height="40"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ciq-yR-MKL">
+                                        <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="RQh-98-TRD"/>
+                                            <constraint firstAttribute="width" constant="40" id="cH0-OX-M5I"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="-"/>
+                                        <connections>
+                                            <action selector="onRemoveOneTicket:" destination="Oec-Pk-Mg4" eventType="touchUpInside" id="R5U-kO-V5D"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cU1-6N-l1K">
+                                        <rect key="frame" x="40" y="0.0" width="60" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="Iae-m4-nB9"/>
+                                            <constraint firstAttribute="width" constant="60" id="rsZ-Sx-RRP"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jqV-ah-jKc">
+                                        <rect key="frame" x="100" y="0.0" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="abd-3Z-raK"/>
+                                            <constraint firstAttribute="width" constant="40" id="ffT-oU-IIo"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="+"/>
+                                        <connections>
+                                            <action selector="onAddOneTicket:" destination="Oec-Pk-Mg4" eventType="touchUpInside" id="FsM-BB-zAd"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="dBQ-o5-DRl"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="lVe-Iu-Rs4"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6ed-ah-tqu" firstAttribute="top" secondItem="ykk-n6-nSN" secondAttribute="bottom" constant="20" id="6lw-WW-H6O"/>
+                            <constraint firstItem="6ed-ah-tqu" firstAttribute="centerX" secondItem="jbu-bb-4uD" secondAttribute="centerX" id="Bka-IE-cA6"/>
+                            <constraint firstItem="lVe-Iu-Rs4" firstAttribute="trailing" secondItem="ykk-n6-nSN" secondAttribute="trailing" constant="20" id="Fqx-Wp-3M3"/>
+                            <constraint firstItem="ykk-n6-nSN" firstAttribute="leading" secondItem="lVe-Iu-Rs4" secondAttribute="leading" constant="20" id="MVK-S0-p0e"/>
+                            <constraint firstItem="lVe-Iu-Rs4" firstAttribute="bottom" secondItem="XYV-7D-TjV" secondAttribute="bottom" constant="20" id="P2m-qW-hcw"/>
+                            <constraint firstItem="XYV-7D-TjV" firstAttribute="leading" secondItem="lVe-Iu-Rs4" secondAttribute="leading" constant="20" id="Tgr-TF-eVf"/>
+                            <constraint firstItem="de6-xe-XwY" firstAttribute="leading" secondItem="lVe-Iu-Rs4" secondAttribute="leading" constant="20" id="Wzx-SR-VoF"/>
+                            <constraint firstItem="lVe-Iu-Rs4" firstAttribute="trailing" secondItem="de6-xe-XwY" secondAttribute="trailing" constant="20" id="jqX-Ru-L98"/>
+                            <constraint firstItem="ykk-n6-nSN" firstAttribute="top" secondItem="de6-xe-XwY" secondAttribute="bottom" constant="20" id="m1N-7Z-VlL"/>
+                            <constraint firstItem="lVe-Iu-Rs4" firstAttribute="trailing" secondItem="XYV-7D-TjV" secondAttribute="trailing" constant="20" id="o1H-kg-zOC"/>
+                            <constraint firstItem="de6-xe-XwY" firstAttribute="top" secondItem="lVe-Iu-Rs4" secondAttribute="top" id="zJ0-5i-I6d"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Order Details" id="ZYL-NU-baz"/>
+                    <connections>
+                        <outlet property="addOneTicketButton" destination="jqV-ah-jKc" id="KWl-Uo-N0b"/>
+                        <outlet property="movieDescriptionLabel" destination="tdc-Cd-dGV" id="k4A-Et-sEv"/>
+                        <outlet property="movieNameLabel" destination="ww5-S2-5cY" id="HTk-SZ-gGo"/>
+                        <outlet property="removeOneTicketButton" destination="ciq-yR-MKL" id="XuX-cV-9IG"/>
+                        <outlet property="selectSeatsButton" destination="XYV-7D-TjV" id="cbO-0J-LvU"/>
+                        <outlet property="ticketNumberDisplay" destination="cU1-6N-l1K" id="r1f-WV-mSE"/>
+                        <segue destination="5i3-qz-77O" kind="show" identifier="orderToSeats" id="vXW-dh-1sV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jg2-zA-2md" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -469,6 +610,10 @@
         <segue reference="TPs-IK-jgv"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="badGuys" width="322" height="516"/>
+        <image name="batman" width="346" height="516"/>
+        <image name="doctorStrange" width="1688" height="2500"/>
+        <image name="sonic" width="339" height="500"/>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
