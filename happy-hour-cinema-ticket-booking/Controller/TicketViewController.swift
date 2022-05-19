@@ -71,6 +71,21 @@ class TicketViewController: UIViewController {
     
     
     func initScrollViewItems() {
+        if self.bookings.isEmpty {
+            // an idicator of no booking records found
+            let itemView = UIStackView()
+            itemView.axis = .vertical
+            itemView.translatesAutoresizingMaskIntoConstraints = false
+            let emptyBookingLabel = UILabel()
+            emptyBookingLabel.text = "No booking record"
+            emptyBookingLabel.sizeToFit()
+            emptyBookingLabel.textAlignment = .center
+            emptyBookingLabel.textColor = .red
+            itemView.addArrangedSubview(emptyBookingLabel)
+            self.scrollViewContainer.addArrangedSubview(itemView)
+            return
+        }
+        
         for (i, booking) in bookings.enumerated() {
             print("Index: \(i), booking: \(booking)")
             let itemView = self.generateBookingItemView(booking: booking)
