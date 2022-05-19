@@ -713,24 +713,10 @@
                     <view key="view" contentMode="scaleToFill" id="z7O-kO-ixU">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t1D-Md-TxB">
-                                <rect key="frame" x="75" y="304" width="161" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Remove fIrst booking"/>
-                                <connections>
-                                    <action selector="onTestButtonTapped:" destination="IF3-6P-Hnc" eventType="touchUpInside" id="LXF-4e-Hnk"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="eIn-4n-qdM"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="My Tickets" id="Ct1-ot-nCd"/>
-                    <connections>
-                        <outlet property="testButton" destination="t1D-Md-TxB" id="zEI-kA-82S"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PVE-9F-HPb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
