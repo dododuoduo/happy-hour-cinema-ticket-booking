@@ -285,48 +285,44 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="de6-xe-XwY">
-                                <rect key="frame" x="20" y="44" width="280" height="300"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie Name" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ww5-S2-5cY">
-                                        <rect key="frame" x="0.0" y="0.0" width="280" height="80"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="80" id="SXQ-Ib-8Je"/>
-                                            <constraint firstAttribute="width" constant="280" id="blt-vh-oqq"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <nil key="textColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie Description: " textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tdc-Cd-dGV">
-                                        <rect key="frame" x="0.0" y="80" width="280" height="220"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="280" id="wLj-vq-Dam"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Movie Name" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ww5-S2-5cY">
+                                <rect key="frame" x="20" y="54" width="280" height="80"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="300" id="bRQ-w2-s32"/>
+                                    <constraint firstAttribute="height" constant="80" id="SXQ-Ib-8Je"/>
+                                    <constraint firstAttribute="width" constant="280" id="blt-vh-oqq"/>
                                 </constraints>
-                            </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XYV-7D-TjV">
-                                <rect key="frame" x="20" y="517" width="280" height="31"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Select Seats"/>
-                                <connections>
-                                    <action selector="onSelectSeatsTapped:" destination="Oec-Pk-Mg4" eventType="touchUpInside" id="x75-V1-xx1"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of tickets:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ykk-n6-nSN">
-                                <rect key="frame" x="20" y="364" width="280" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7.5/10" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="50" id="MVq-aP-OAp">
+                                <rect key="frame" x="87" y="160" width="50" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="v6H-Yl-oAW">
+                                <rect key="frame" x="138" y="155" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" placeholderIntrinsicWidth="60" placeholderIntrinsicHeight="40" layoutMarginsFollowReadableWidth="YES" insetsLayoutMarginsFromSafeArea="NO" image="IMDb_IOS-OSX_App_Icon" id="5dp-M3-wHU">
+                                <rect key="frame" x="36" y="150" width="43" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="WnN-GU-MLB"/>
+                                    <constraint firstAttribute="width" constant="60" id="YIO-tw-5qv"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="description (UItext)" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="cBO-Ec-d7X">
+                                <rect key="frame" x="20" y="200" width="280" height="214"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6ed-ah-tqu">
-                                <rect key="frame" x="90" y="404.5" width="140" height="40"/>
+                                <rect key="frame" x="90" y="438" width="140" height="40"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ciq-yR-MKL">
                                         <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
@@ -367,28 +363,57 @@
                                     <constraint firstAttribute="height" constant="40" id="dBQ-o5-DRl"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XYV-7D-TjV">
+                                <rect key="frame" x="20" y="498" width="280" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="CH9-rz-aDu"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Select Seats"/>
+                                <connections>
+                                    <action selector="onSelectSeatsTapped:" destination="Oec-Pk-Mg4" eventType="touchUpInside" id="x75-V1-xx1"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" ambiguous="YES" image="rate5" id="dH8-RS-lKb">
+                                <rect key="frame" x="192" y="142" width="55" height="58"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="exD-7a-Zzw"/>
+                                    <constraint firstAttribute="width" constant="50" id="m7O-0Q-SmU"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Number of tickets:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ykk-n6-nSN">
+                                <rect key="frame" x="24" y="422" width="280" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="lVe-Iu-Rs4"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6ed-ah-tqu" firstAttribute="top" secondItem="ykk-n6-nSN" secondAttribute="bottom" constant="20" id="6lw-WW-H6O"/>
+                            <constraint firstItem="ww5-S2-5cY" firstAttribute="top" secondItem="lVe-Iu-Rs4" secondAttribute="top" constant="10" id="1CQ-u9-gpg"/>
+                            <constraint firstItem="6ed-ah-tqu" firstAttribute="top" secondItem="ykk-n6-nSN" secondAttribute="bottom" constant="10" id="6lw-WW-H6O"/>
                             <constraint firstItem="6ed-ah-tqu" firstAttribute="centerX" secondItem="jbu-bb-4uD" secondAttribute="centerX" id="Bka-IE-cA6"/>
                             <constraint firstItem="lVe-Iu-Rs4" firstAttribute="trailing" secondItem="ykk-n6-nSN" secondAttribute="trailing" constant="20" id="Fqx-Wp-3M3"/>
+                            <constraint firstItem="XYV-7D-TjV" firstAttribute="top" secondItem="6ed-ah-tqu" secondAttribute="bottom" constant="20" id="Fsr-32-5Vk"/>
+                            <constraint firstItem="ww5-S2-5cY" firstAttribute="leading" secondItem="lVe-Iu-Rs4" secondAttribute="leading" constant="20" id="G8h-mL-xIS"/>
                             <constraint firstItem="ykk-n6-nSN" firstAttribute="leading" secondItem="lVe-Iu-Rs4" secondAttribute="leading" constant="20" id="MVK-S0-p0e"/>
-                            <constraint firstItem="lVe-Iu-Rs4" firstAttribute="bottom" secondItem="XYV-7D-TjV" secondAttribute="bottom" constant="20" id="P2m-qW-hcw"/>
+                            <constraint firstItem="lVe-Iu-Rs4" firstAttribute="bottom" secondItem="XYV-7D-TjV" secondAttribute="bottom" constant="30" id="P2m-qW-hcw"/>
+                            <constraint firstItem="lVe-Iu-Rs4" firstAttribute="trailing" secondItem="ww5-S2-5cY" secondAttribute="trailing" constant="20" id="Rxs-Rl-G1a"/>
+                            <constraint firstItem="MVq-aP-OAp" firstAttribute="leading" secondItem="5dp-M3-wHU" secondAttribute="trailing" constant="3" id="TgN-hj-XvV"/>
                             <constraint firstItem="XYV-7D-TjV" firstAttribute="leading" secondItem="lVe-Iu-Rs4" secondAttribute="leading" constant="20" id="Tgr-TF-eVf"/>
-                            <constraint firstItem="de6-xe-XwY" firstAttribute="leading" secondItem="lVe-Iu-Rs4" secondAttribute="leading" constant="20" id="Wzx-SR-VoF"/>
-                            <constraint firstItem="lVe-Iu-Rs4" firstAttribute="trailing" secondItem="de6-xe-XwY" secondAttribute="trailing" constant="20" id="jqX-Ru-L98"/>
-                            <constraint firstItem="ykk-n6-nSN" firstAttribute="top" secondItem="de6-xe-XwY" secondAttribute="bottom" constant="20" id="m1N-7Z-VlL"/>
                             <constraint firstItem="lVe-Iu-Rs4" firstAttribute="trailing" secondItem="XYV-7D-TjV" secondAttribute="trailing" constant="20" id="o1H-kg-zOC"/>
-                            <constraint firstItem="de6-xe-XwY" firstAttribute="top" secondItem="lVe-Iu-Rs4" secondAttribute="top" id="zJ0-5i-I6d"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Order Details" id="ZYL-NU-baz"/>
+                    <size key="freeformSize" width="320" height="568"/>
                     <connections>
                         <outlet property="addOneTicketButton" destination="jqV-ah-jKc" id="KWl-Uo-N0b"/>
-                        <outlet property="movieDescriptionLabel" destination="tdc-Cd-dGV" id="k4A-Et-sEv"/>
+                        <outlet property="imdbRateLabel" destination="MVq-aP-OAp" id="1pw-jL-2lz"/>
+                        <outlet property="movieDescriptionLabel" destination="cBO-Ec-d7X" id="feU-Gv-ZsW"/>
                         <outlet property="movieNameLabel" destination="ww5-S2-5cY" id="HTk-SZ-gGo"/>
+                        <outlet property="ourRateLabel" destination="dH8-RS-lKb" id="GYx-Lp-R1j"/>
                         <outlet property="removeOneTicketButton" destination="ciq-yR-MKL" id="XuX-cV-9IG"/>
                         <outlet property="selectSeatsButton" destination="XYV-7D-TjV" id="cbO-0J-LvU"/>
                         <outlet property="ticketNumberDisplay" destination="cU1-6N-l1K" id="r1f-WV-mSE"/>
@@ -397,7 +422,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jg2-zA-2md" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2359" y="110"/>
+            <point key="canvasLocation" x="2358.75" y="109.85915492957747"/>
         </scene>
         <!--Select Seats-->
         <scene sceneID="i9e-XE-ITn">
@@ -753,11 +778,17 @@
         <segue reference="IW4-lY-wJX"/>
     </inferredMetricsTieBreakers>
     <resources>
-        <image name="Love Scandals &amp; Doctors" width="888" height="1280"/>
-        <image name="Love hard" width="500" height="740"/>
-        <image name="Made for Love" width="260" height="384"/>
-        <image name="Resort to Love" width="1500" height="2222"/>
+        <image name="IMDb_IOS-OSX_App_Icon" width="1024" height="1024"/>
         <image name="appstore" width="166.5" height="166.5"/>
+        <image name="Love Scandals &amp; Doctors" width="888" height="1280"/>
+        <image name="Made for Love" width="260" height="384"/>
+        <image name="Love hard" width="500" height="740"/>
+        <image name="rate5" width="512" height="512"/>
+        <image name="Resort to Love" width="1500" height="2222"/>
+        <image name="star" width="512" height="512"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

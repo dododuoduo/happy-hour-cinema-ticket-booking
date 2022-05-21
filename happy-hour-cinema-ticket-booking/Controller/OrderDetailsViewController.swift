@@ -11,11 +11,13 @@ class OrderDetailsViewController: UIViewController {
     
     
     @IBOutlet weak var movieNameLabel: UILabel!
-    @IBOutlet weak var movieDescriptionLabel: UILabel!
+    @IBOutlet weak var movieDescriptionLabel: UITextView!
     @IBOutlet weak var ticketNumberDisplay: UILabel!
     @IBOutlet weak var removeOneTicketButton: UIButton!
     @IBOutlet weak var addOneTicketButton: UIButton!
     
+    @IBOutlet weak var ourRateLabel: UIImageView!
+    @IBOutlet weak var imdbRateLabel: UILabel!
     @IBOutlet weak var selectSeatsButton: UIButton!
     
     // input
@@ -40,6 +42,13 @@ class OrderDetailsViewController: UIViewController {
         self.ticketNumberDisplay.text = String(self.numOfTicket)
         self.movieNameLabel.text = self.movieName!
         self.movieDescriptionLabel.text = self.moiveDescription!
+        
+        let imdbRate = 7.3  //remove after add new element in database
+        self.imdbRateLabel.text = "\(imdbRate)/10"  //imdb change to self.imdbRate
+        let ourRate = 4
+        self.ourRateLabel.image = UIImage(named: "rate\(ourRate)") //like imdb
+        
+        
     }
     
     @IBAction func onRemoveOneTicket(_ sender: Any) {
