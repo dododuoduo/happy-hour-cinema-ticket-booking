@@ -760,11 +760,17 @@
         <image name="Resort to Love" width="1500" height="2222"/>
         <image name="appstore" width="166.5" height="166.5"/>
 =======
+        <image name="IMDb_IOS-OSX_App_Icon" width="1024" height="1024"/>
         <image name="appstore" width="166.5" height="166.5"/>
         <image name="Love Scandals &amp; Doctors" width="888" height="1280"/>
         <image name="Made for Love" width="260" height="384"/>
         <image name="Love hard" width="500" height="740"/>
+        <image name="rate5" width="512" height="512"/>
         <image name="Resort to Love" width="1500" height="2222"/>
+        <image name="star" width="512" height="512"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
 >>>>>>> cf5fe6e3a5a2f3cd6357cecdc634a74ea7759bad
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
