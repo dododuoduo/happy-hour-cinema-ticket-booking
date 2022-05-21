@@ -1,9 +1,6 @@
 ## macOS
 .DS_Store
 
-## firebase
-## GoogleService-Info.plist
-
 ## User settings
 xcuserdata/
 
