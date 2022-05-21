@@ -37,7 +37,6 @@
 		D59709C02830FDC900642949 /* Seat.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59709BF2830FDC900642949 /* Seat.swift */; };
 		D59709C228311EF300642949 /* CinemaRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59709C128311EF300642949 /* CinemaRoom.swift */; };
 		D59709C62832201F00642949 /* Booking.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59709C52832201F00642949 /* Booking.swift */; };
-		D884FCA82836443100925CB5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D884FCA72836443100925CB5 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -111,7 +110,6 @@
 				D5970988282E26B000642949 /* Controller */,
 				D5970987282E269100642949 /* View */,
 				D597097C282E1DCB00642949 /* Assets.xcassets */,
-				D884FCA72836443100925CB5 /* GoogleService-Info.plist */,
 				D5970981282E1DCB00642949 /* Info.plist */,
 			);
 			path = "happy-hour-cinema-ticket-booking";
@@ -229,7 +227,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5970980282E1DCB00642949 /* LaunchScreen.storyboard in Resources */,
-				D884FCA82836443100925CB5 /* GoogleService-Info.plist in Resources */,
 				D597097D282E1DCB00642949 /* Assets.xcassets in Resources */,
 				D597097B282E1DCA00642949 /* Main.storyboard in Resources */,
 			);
