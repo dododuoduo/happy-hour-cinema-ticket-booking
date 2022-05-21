@@ -202,7 +202,7 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain">
-                                    <backgroundConfiguration key="background" image="doctorStrange"/>
+                                    <backgroundConfiguration key="background" image="Love hard"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="onDoctorStrangeTapped:" destination="Sl0-7z-9qC" eventType="touchUpInside" id="0vo-jT-Db4"/>
@@ -212,21 +212,27 @@
                                 <rect key="frame" x="40" y="284" width="100" height="160"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain">
-                                    <backgroundConfiguration key="background" image="badGuys"/>
+                                    <backgroundConfiguration key="background" image="Love Scandals &amp; Doctors"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="onBadGuyTapped:" destination="Sl0-7z-9qC" eventType="touchUpInside" id="PLC-0G-ilA"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ts-IH-2Yr">
                                 <rect key="frame" x="180" y="284" width="100" height="160"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain">
-                                    <backgroundConfiguration key="background" image="batman"/>
+                                    <backgroundConfiguration key="background" image="Made for Love"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="onBatManTapped:" destination="Sl0-7z-9qC" eventType="touchUpInside" id="lEG-EZ-XTn"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nVa-WQ-64o">
                                 <rect key="frame" x="180" y="104" width="100" height="160"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain">
-                                    <backgroundConfiguration key="background" image="sonic"/>
+                                    <backgroundConfiguration key="background" image="Resort to Love"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="onSonicTapped:" destination="Sl0-7z-9qC" eventType="touchUpInside" id="zq2-hv-cNE"/>
@@ -257,6 +263,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="Movies" id="34T-M5-4gw"/>
                     <connections>
+                        <outlet property="badGuyButton" destination="fHI-dm-acH" id="jVD-S6-bo6"/>
+                        <outlet property="batManButton" destination="0ts-IH-2Yr" id="EBR-fF-u9B"/>
                         <outlet property="doctorStrangeButton" destination="Jf5-Jg-7UR" id="9iC-GF-WsC"/>
                         <outlet property="firstnameLabel" destination="uyr-Wy-z9y" id="JV3-vZ-oxZ"/>
                         <outlet property="logoutButton" destination="oVW-pv-Xu7" id="blc-ic-qhT"/>
@@ -767,16 +775,16 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="S3E-Dx-V5H"/>
+        <segue reference="IW4-lY-wJX"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="IMDb_IOS-OSX_App_Icon" width="1024" height="1024"/>
         <image name="appstore" width="166.5" height="166.5"/>
-        <image name="badGuys" width="322" height="516"/>
-        <image name="batman" width="346" height="516"/>
-        <image name="doctorStrange" width="1688" height="2500"/>
+        <image name="Love Scandals &amp; Doctors" width="888" height="1280"/>
+        <image name="Made for Love" width="260" height="384"/>
+        <image name="Love hard" width="500" height="740"/>
         <image name="rate5" width="512" height="512"/>
-        <image name="sonic" width="339" height="500"/>
+        <image name="Resort to Love" width="1500" height="2222"/>
         <image name="star" width="512" height="512"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
