@@ -23,7 +23,7 @@ class MovieViewController: UIViewController {
     var selectedMovieName: String?
     var selectedYear: String?
     var selectedMovieDescription: String?
-    var selectedRating: String?
+    var selectedRating: Double?
     var movies: [Movie] = []
     
     var db = DB()
@@ -110,7 +110,7 @@ class MovieViewController: UIViewController {
         self.selectedMovieName = self.movies[0].movieName
         self.selectedYear = self.movies[0].year
         self.selectedMovieDescription = "An LA girl, unlucky in love, falls for an East Coast guy on a dating app and decides to surprise him for the holidays, only to discover that she's been catfished. This lighthearted romantic comedy chronicles her attempt to reel in love."
-        self.selectedRating = "6.3"
+        self.selectedRating = 6.3
         self.navToOrderDetails()
     }
     
@@ -119,7 +119,7 @@ class MovieViewController: UIViewController {
         self.selectedMovieName = self.movies[1].movieName
         self.selectedYear = self.movies[1].year
         self.selectedMovieDescription = "Love, Scandal and Doctors is a story of 5 medical interns who got embroiled in a scandal. They are the prime accused in a murder. The question lies - Are these students even capable of committing such a crime or are they just being framed?"
-        self.selectedRating = "5.9"
+        self.selectedRating = 5.9
         self.navToOrderDetails()
     }
     
@@ -128,7 +128,7 @@ class MovieViewController: UIViewController {
         self.selectedMovieName = self.movies[2].movieName
         self.selectedYear = self.movies[2].year
         self.selectedMovieDescription = "A young woman, on the run after 10 years in a suffocating marriage to a tech billionaire, suddenly realizes that her husband has implanted a revolutionary monitoring device in her brain that allows him to track her every move."
-        self.selectedRating = "6.9"
+        self.selectedRating = 6.9
         self.navToOrderDetails()
     }
     
@@ -137,7 +137,7 @@ class MovieViewController: UIViewController {
         self.selectedMovieName = self.movies[3].movieName
         self.selectedYear = self.movies[3].year
         self.selectedMovieDescription = "Erica, who ends up as the entertainment at her ex-fiancé's wedding after reluctantly taking a gig at a luxurious island resort while in the wake of a music career meltdown."
-        self.selectedRating = "5.7"
+        self.selectedRating = 5.7
         self.navToOrderDetails()
     }
     
@@ -151,7 +151,8 @@ class MovieViewController: UIViewController {
             if let destinationVC = segue.destination as? OrderDetailsViewController {
                 destinationVC.movieId = self.selectedMovieId
                 destinationVC.movieName = self.selectedMovieName
-                destinationVC.moiveDescription = self.selectedMovieDescription
+                destinationVC.movieDescription = self.selectedMovieDescription
+                destinationVC.movieRating = self.selectedRating!
             }
         }
     }

@@ -17,8 +17,8 @@ class SeatsViewController: UIViewController {
     @IBOutlet weak var seatsSelectedLabel: UILabel!
     @IBOutlet weak var selectMoreLabel: UILabel!
     
-    var movieId: String = "aaa"               // TODO: remove hardcoded String <"aaa">, receive movidId from previous controller
-    var movieName: String = "Doctor Strange"  // TODO: remove hardcoded String <"Doctor Strange">, receive movieName from previous controller
+    var movieId: String = "DefaultId"               // TODO: remove hardcoded String <"aaa">, receive movidId from previous controller
+    var movieName: String = "Default"  // TODO: remove hardcoded String <"Doctor Strange">, receive movieName from previous controller
     var maxSeatNum: Int = 4                   // TODO: remove hardcoded Int<4>, receive maxSeatNum (i.e. number of people) from previous controller
     
     var cinemaView: UIView?

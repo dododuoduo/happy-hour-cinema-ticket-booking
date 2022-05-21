@@ -11,19 +11,19 @@ class OrderDetailsViewController: UIViewController {
     
     
     @IBOutlet weak var movieNameLabel: UILabel!
-    @IBOutlet weak var movieDescriptionLabel: UITextView!
+    @IBOutlet weak var movieDescriptionLabel: UILabel!
     @IBOutlet weak var ticketNumberDisplay: UILabel!
     @IBOutlet weak var removeOneTicketButton: UIButton!
     @IBOutlet weak var addOneTicketButton: UIButton!
-    
-    @IBOutlet weak var ourRateLabel: UIImageView!
-    @IBOutlet weak var imdbRateLabel: UILabel!
+    @IBOutlet weak var imdbRatingLabel: UILabel!
+    @IBOutlet weak var rateImageView: UIImageView!
     @IBOutlet weak var selectSeatsButton: UIButton!
     
     // input
     var movieId: String?
     var movieName: String?
-    var moiveDescription: String?
+    var movieDescription: String?
+    var movieRating: Double?
     
     // output
     var numOfTicket: Int = 1
@@ -41,14 +41,14 @@ class OrderDetailsViewController: UIViewController {
         self.numOfTicket = 1
         self.ticketNumberDisplay.text = String(self.numOfTicket)
         self.movieNameLabel.text = self.movieName!
-        self.movieDescriptionLabel.text = self.moiveDescription!
-        
-        let imdbRate = 7.3  //remove after add new element in database
-        self.imdbRateLabel.text = "\(imdbRate)/10"  //imdb change to self.imdbRate
-        let ourRate = 4
-        self.ourRateLabel.image = UIImage(named: "rate\(ourRate)") //like imdb
-        
-        
+        self.movieDescriptionLabel.text = self.movieDescription!
+        let movieRatingStr = String(self.movieRating!)
+        self.imdbRatingLabel.text = "\(movieRatingStr) / 10"
+        let ratingImageFileName = "rate" + String(Int((self.movieRating! / 10) * 5))
+        let fileNameArr = ["rate1", "rate2", "rate3", "rate4", "rate5"]
+        if fileNameArr.contains(ratingImageFileName) {
+            self.rateImageView.image = UIImage(named: ratingImageFileName)
+        }
     }
     
     @IBAction func onRemoveOneTicket(_ sender: Any) {
