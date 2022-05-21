@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="96U-fn-mMx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="96U-fn-mMx">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -202,7 +202,7 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain">
-                                    <backgroundConfiguration key="background" image="doctorStrange"/>
+                                    <backgroundConfiguration key="background" image="Love hard"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="onDoctorStrangeTapped:" destination="Sl0-7z-9qC" eventType="touchUpInside" id="0vo-jT-Db4"/>
@@ -212,21 +212,27 @@
                                 <rect key="frame" x="40" y="284" width="100" height="160"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain">
-                                    <backgroundConfiguration key="background" image="badGuys"/>
+                                    <backgroundConfiguration key="background" image="Love Scandals &amp; Doctors"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="onBadGuyTapped:" destination="Sl0-7z-9qC" eventType="touchUpInside" id="PLC-0G-ilA"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ts-IH-2Yr">
                                 <rect key="frame" x="180" y="284" width="100" height="160"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain">
-                                    <backgroundConfiguration key="background" image="batman"/>
+                                    <backgroundConfiguration key="background" image="Made for Love"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="onBatManTapped:" destination="Sl0-7z-9qC" eventType="touchUpInside" id="lEG-EZ-XTn"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nVa-WQ-64o">
                                 <rect key="frame" x="180" y="104" width="100" height="160"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain">
-                                    <backgroundConfiguration key="background" image="sonic"/>
+                                    <backgroundConfiguration key="background" image="Resort to Love"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="onSonicTapped:" destination="Sl0-7z-9qC" eventType="touchUpInside" id="zq2-hv-cNE"/>
@@ -257,6 +263,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="Movies" id="34T-M5-4gw"/>
                     <connections>
+                        <outlet property="badGuyButton" destination="fHI-dm-acH" id="jVD-S6-bo6"/>
+                        <outlet property="batManButton" destination="0ts-IH-2Yr" id="EBR-fF-u9B"/>
                         <outlet property="doctorStrangeButton" destination="Jf5-Jg-7UR" id="9iC-GF-WsC"/>
                         <outlet property="firstnameLabel" destination="uyr-Wy-z9y" id="JV3-vZ-oxZ"/>
                         <outlet property="logoutButton" destination="oVW-pv-Xu7" id="blc-ic-qhT"/>
@@ -742,14 +750,14 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="S3E-Dx-V5H"/>
+        <segue reference="IW4-lY-wJX"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="Love Scandals &amp; Doctors" width="888" height="1280"/>
+        <image name="Love hard" width="500" height="740"/>
+        <image name="Made for Love" width="260" height="384"/>
+        <image name="Resort to Love" width="1500" height="2222"/>
         <image name="appstore" width="166.5" height="166.5"/>
-        <image name="badGuys" width="322" height="516"/>
-        <image name="batman" width="346" height="516"/>
-        <image name="doctorStrange" width="1688" height="2500"/>
-        <image name="sonic" width="339" height="500"/>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

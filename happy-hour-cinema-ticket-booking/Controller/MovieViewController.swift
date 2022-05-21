@@ -15,11 +15,16 @@ class MovieViewController: UIViewController {
     @IBOutlet weak var logoutButton: UIButton!
     
     @IBOutlet weak var doctorStrangeButton: UIButton!
+    @IBOutlet weak var badGuyButton: UIButton!
+    @IBOutlet weak var batManButton: UIButton!
     @IBOutlet weak var sonicButton: UIButton!
     
     var selectedMovieId: String?
     var selectedMovieName: String?
+    var selectedYear: String?
     var selectedMovieDescription: String?
+    var selectedRating: String?
+    var movies: [Movie] = []
     
     var db = DB()
     
@@ -37,6 +42,44 @@ class MovieViewController: UIViewController {
         firstnameLabel.layer.cornerRadius = 20
         firstnameLabel.textColor = .white
         self.renderUsername()
+        self.getMovies()
+    }
+    
+    //get movies infomation from Rapid API
+    func getMovies() {
+        let headers = [
+            "X-RapidAPI-Host": "movie-database-alternative.p.rapidapi.com",
+            "X-RapidAPI-Key": "7761e23771msh3616a95a9f2e8f3p1b075ejsne64a6146940d"
+        ]
+
+        let request = NSMutableURLRequest(url: NSURL(string: "https://movie-database-alternative.p.rapidapi.com/?s=love&r=json&y=2021&page=1")! as URL,
+                                                cachePolicy: .useProtocolCachePolicy,
+                                            timeoutInterval: 10.0)
+        request.httpMethod = "GET"
+        request.allHTTPHeaderFields = headers
+        var movieResponse: [NSDictionary] = []
+        let session = URLSession.shared
+        let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
+            if (error != nil) {
+                print(error!)
+            } else {
+                let httpResponse = response as? HTTPURLResponse
+                if (httpResponse != nil && httpResponse!.statusCode == 200) {
+                    //JSON Prase for movies response
+                    if let json = try? JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? [String : Any] {
+                        movieResponse = json["Search"] as! [NSDictionary]
+                        for index in 0..<movieResponse.count{
+                            var movie = Movie(movieId: nil, movieName: nil, year: nil, movieDescription: nil, movieRating: nil)
+                            movie.movieId = movieResponse[index]["imdbID"] as? String
+                            movie.movieName = movieResponse[index]["Title"] as? String
+                            movie.year = movieResponse[index]["Year"] as? String
+                            self.movies.insert(movie, at: index)
+                        }
+                    }
+                }
+            }
+        })
+        dataTask.resume()
     }
     
     func renderUsername() {
@@ -63,16 +106,38 @@ class MovieViewController: UIViewController {
     }
     
     @IBAction func onDoctorStrangeTapped(_ sender: Any) {
-        self.selectedMovieId = "doctor-strange-id"
-        self.selectedMovieName = "Doctor Strange in the Multiverse of Madness"
-        self.selectedMovieDescription = "In Marvel Studios’ Doctor Strange in the Multiverse of Madness, the MCU unlocks the Multiverse and pushes its boundaries further than ever before. Journey into the unknown with Doctor Strange traverses the mind-bending and dangerous alternate realities of the Multiverse to confront a mysterious new adversary."
+        self.selectedMovieId = self.movies[0].movieId
+        self.selectedMovieName = self.movies[0].movieName
+        self.selectedYear = self.movies[0].year
+        self.selectedMovieDescription = "An LA girl, unlucky in love, falls for an East Coast guy on a dating app and decides to surprise him for the holidays, only to discover that she's been catfished. This lighthearted romantic comedy chronicles her attempt to reel in love."
+        self.selectedRating = "6.3"
+        self.navToOrderDetails()
+    }
+    
+    @IBAction func onBadGuyTapped(_ sender: Any) {
+        self.selectedMovieId = self.movies[1].movieId
+        self.selectedMovieName = self.movies[1].movieName
+        self.selectedYear = self.movies[1].year
+        self.selectedMovieDescription = "Love, Scandal and Doctors is a story of 5 medical interns who got embroiled in a scandal. They are the prime accused in a murder. The question lies - Are these students even capable of committing such a crime or are they just being framed?"
+        self.selectedRating = "5.9"
+        self.navToOrderDetails()
+    }
+    
+    @IBAction func onBatManTapped(_ sender: Any) {
+        self.selectedMovieId = self.movies[2].movieId
+        self.selectedMovieName = self.movies[2].movieName
+        self.selectedYear = self.movies[2].year
+        self.selectedMovieDescription = "A young woman, on the run after 10 years in a suffocating marriage to a tech billionaire, suddenly realizes that her husband has implanted a revolutionary monitoring device in her brain that allows him to track her every move."
+        self.selectedRating = "6.9"
         self.navToOrderDetails()
     }
     
     @IBAction func onSonicTapped(_ sender: Any) {
-        self.selectedMovieId = "sonic-id"
-        self.selectedMovieName = "Sonic the Hedgehog 2"
-        self.selectedMovieDescription = "The world’s favorite blue hedgehog is back for a next-level adventure in SONIC THE HEDGEHOG 2. After settling in Green Hills, Sonic is eager to prove he has what it takes to be a true hero. His test comes when Dr. Robotnik returns, this time with a new partner, Knuckles, in search for an emerald that has the power to destroy civilizations. "
+        self.selectedMovieId = self.movies[3].movieId
+        self.selectedMovieName = self.movies[3].movieName
+        self.selectedYear = self.movies[3].year
+        self.selectedMovieDescription = "Erica, who ends up as the entertainment at her ex-fiancé's wedding after reluctantly taking a gig at a luxurious island resort while in the wake of a music career meltdown."
+        self.selectedRating = "5.7"
         self.navToOrderDetails()
     }
     
