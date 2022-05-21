@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6146402A2839467C0037E194 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 614640292839467C0037E194 /* GoogleService-Info.plist */; };
 		9B3A52762838B1B600AF9B9B /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3A52752838B1B500AF9B9B /* Movie.swift */; };
 		D5970974282E1DCA00642949 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5970973282E1DCA00642949 /* AppDelegate.swift */; };
 		D5970976282E1DCA00642949 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5970975282E1DCA00642949 /* SceneDelegate.swift */; };
@@ -42,7 +41,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		614640292839467C0037E194 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Desktop/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9B3A52752838B1B500AF9B9B /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		D5970970282E1DCA00642949 /* happy-hour-cinema-ticket-booking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "happy-hour-cinema-ticket-booking.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5970973282E1DCA00642949 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -115,7 +113,6 @@
 				D5970987282E269100642949 /* View */,
 				D597097C282E1DCB00642949 /* Assets.xcassets */,
 				D5970981282E1DCB00642949 /* Info.plist */,
-				614640292839467C0037E194 /* GoogleService-Info.plist */,
 			);
 			path = "happy-hour-cinema-ticket-booking";
 			sourceTree = "<group>";
@@ -233,7 +230,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5970980282E1DCB00642949 /* LaunchScreen.storyboard in Resources */,
-				6146402A2839467C0037E194 /* GoogleService-Info.plist in Resources */,
 				D597097D282E1DCB00642949 /* Assets.xcassets in Resources */,
 				D597097B282E1DCA00642949 /* Main.storyboard in Resources */,
 			);
